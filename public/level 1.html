@@ -223,7 +223,7 @@
             <div class="win-details" id="winDetailsMessage"></div>
         </div>
         <div class="button-container">
-            <button class="btn btn-custom" id="nextButton" style="display: none;">Next Level</button>
+            <button class="btn btn-custom" id="nextButton" style="display: none;">Next Level >></button>
             <button class="btn btn-custom" id="restartButton" style="display: none;">Restart</button>
             <button class="btn btn-danger" id="replayButton" style="display: none;">Replay</button>
             <button class="btn btn-danger" id="quitButton">Quit</button>
@@ -328,7 +328,7 @@
                 clearInterval(loop);
                 winMessage.style.display = 'block';
                 congratulationsMessage.innerText = 'Congratulations!';
-                winDetailsMessage.innerText = `You won in ${moves} moves and ${timer} seconds!`;
+                winDetailsMessage.innerText = `You won in ${moves} Moves and ${timer} Seconds!`;
                 nextButton.style.display = 'block';
                 replayButton.style.display = 'block';
                 restartButton.style.display = 'none';
