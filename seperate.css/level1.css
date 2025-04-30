@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background: url('https://store-images.s-microsoft.com/image/apps.54588.14090654178473619.aa2706f7-9244-4d37-b59f-3f87f7589476.6a5a6db1-70ba-4b57-a879-7f9264cd3a40?mode=scale&q=90&h=1080&w=1920') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.title-box {
+    display: inline-block;
+    padding: 5px 39px;
+    border: 3px solid #e74c3c;
+    border-radius: 11px;
+    background-color: rgba(240, 235, 235, 0.2);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    margin-bottom: 0px;
+    color: #e74c3c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #f1c40f;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.level-box {
+    border: 2px solid #f1c40f;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.stats {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background: #f39c12;
+    border: 2px solid #e67e22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27pt;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card-back {
+    background: #3498db;
+    color: #ffffff;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 2px solid #2980b9;
+}
+
+.win-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgba(100, 150, 200, 0.9);
+    color: #282A3A;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 24px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.congratulations {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.win-details {
+    font-size: 20px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.party-bomb {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: confetti-fall 1.5s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translate(calc(var(--dx, 0) * 100vw), calc(var(--dy, 0) * 100vh)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-custom,
+.btn-danger {
+    width: 120px;
+    margin-top: 10px;
+    background-color: #2ecc71;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.21s;
+}
+
+.btn-custom:hover,
+.btn-danger:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}
