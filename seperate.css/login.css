@@ -6,6 +6,7 @@
 }
 body {
     background-color: #778DA9;
+    
     background: linear-gradient(to right,#778DA9,#1B263B);
     display: flex;
     align-items: center;
